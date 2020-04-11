@@ -8,10 +8,10 @@ export default function Table(props) {
              <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">E-mail</th>
-                            <th scope="col">Department</th>
+                            <th scope="col" onClick={props.handleSort}>Id</th>
+                            <th scope="col" onClick={props.handleSort}>Name</th>
+                            <th scope="col" onClick={props.handleSort}>Email</th>
+                            <th scope="col" onClick={props.handleSort}>Department</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,9 +22,7 @@ export default function Table(props) {
                                 email={emp.email}
                                 department={emp.department}
                             />
-
                         )}
-
                     </tbody>
                 </table> 
             </div>  

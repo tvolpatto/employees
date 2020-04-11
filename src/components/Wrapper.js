@@ -3,7 +3,28 @@ import employees from "../utils/db.json"
 import Filter from './Filter'
 import Table from './Table'
 
-
+function compareValues(key, order = 'asc') {
+    return function innerSort(a, b) {
+      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+        return 0;
+      }
+  
+      const varA = (typeof a[key] === 'string')
+        ? a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string')
+        ? b[key].toUpperCase() : b[key];
+  
+      let comparison = 0;
+      if (varA > varB) {
+        comparison = 1;
+      } else if (varA < varB) {
+        comparison = -1;
+      }
+      return (
+        (order === 'desc') ? (comparison * -1) : comparison
+      );
+    };
+}
 
 export default class Wrapper extends Component {
     state = {
@@ -14,8 +35,10 @@ export default class Wrapper extends Component {
         this.setState(this.state);
     }
 
-    handleClick = event => {
-        console.log(event.target)
+    handleSortClick = event => {
+        const field = event.target.innerText.toLowerCase();
+        const sortedList = this.state.empToRender.sort(compareValues(field));
+        this.setState({empToRender : sortedList});
     }
 
     handleInputChange = event => {
@@ -35,7 +58,7 @@ export default class Wrapper extends Component {
         return (
             <div>
                 <Filter handleInputChange={this.handleInputChange}/>
-                <Table employees={this.state.empToRender} handleClick={this.handleClick}/>
+                <Table employees={this.state.empToRender} handleSort={this.handleSortClick}/>
             </div>
         )
     }
