@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "Tony Stark",
+      "email": "tony@company.com",
+      "department": "Corporate"
+    },
+    {
+      "id": 2,
+      "name": "Aragorn Arathorn",
+      "email": "aragorn@company.com",
+      "department": "Engineering"
+    },
+    {
+      "id": 3,
+      "name": "John Travolta",
+      "email": "john@company.com",
+      "department": "Engineering"
+    },
+    {
+      "id": 4,
+      "name": "Natasha Romanov",
+      "email": "blackwidow@company.com",
+      "department": "Customer Service"
+    },
+    {
+      "id": 5,
+      "name": "Megan Fox",
+      "email": "fox@company.com",
+      "department": "Sales"
+    },
+    {
+      "id": 6,
+      "name": "Homer Simpson",
+      "email": "hsimpson@company.com",
+      "department": "Quality"
+    },
+    {
+      "id": 7,
+      "name": "John Wick",
+      "email": "security@company.com",
+      "department": "Security"
+    },
+    {
+      "id": 8,
+      "name": "John McClane",
+      "email": "security@company.com",
+      "department": "Security"
+    },
+    {
+      "id": 9,
+      "name": "Bart Simpson",
+      "email": "bsimpson@company.com",
+      "department": "Sales"
+    },
+    {
+      "id": 10,
+      "name": "Clint Eastwood",
+      "email": "clint@company.com",
+      "department": "Marketing"
+    }
+  ]
