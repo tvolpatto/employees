@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 import employees from "../utils/db.json"
+import Filter from './Filter'
 
 export default class Wrapper extends Component {
     render() {
         return (
             <div>
-                <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Name or Department" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                    <div className="input-group-append">
-                        <button className="btn btn-outline-secondary" type="button">Search</button>
-                    </div>
-                </div>
+                <Filter/>
                 <table className="table table-striped">
                     <thead>
                         <tr>
