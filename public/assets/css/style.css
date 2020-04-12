@@ -3,3 +3,6 @@ th {
  cursor: pointer;
 }
 
+.container {
+    width: 85%;
+}
