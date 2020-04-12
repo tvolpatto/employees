@@ -1,17 +1,35 @@
 import React from 'react'
 import TableItem from './TableItem'
 
-export default function Table(props) {
+function showIcon(props, field){
+    if (props.field=== field) {
+        return props.order ==='asc'? <i class="fas fa-sort-up"></i> : <i class="fas fa-sort-down"/>;
+    }
+} 
+
+export default function Table(props) {  
     return (
         <div>
           <div>
              <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col" onClick={props.handleSort}>Id</th>
-                            <th scope="col" onClick={props.handleSort}>Name</th>
-                            <th scope="col" onClick={props.handleSort}>Email</th>
-                            <th scope="col" onClick={props.handleSort}>Department</th>
+                            <th scope="col" onClick={props.handleSort}>
+                                Id                                
+                                {showIcon(props, "id")}
+                            </th>
+                            <th scope="col" onClick={props.handleSort}>
+                                Name
+                                {showIcon(props, "name")}
+                            </th>
+                            <th scope="col" onClick={props.handleSort}>
+                                Email
+                                {showIcon(props, "email")}
+                            </th>
+                            <th scope="col" onClick={props.handleSort}>
+                                Department
+                                {showIcon(props, "department")}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

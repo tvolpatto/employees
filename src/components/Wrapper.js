@@ -28,7 +28,9 @@ function compareValues(key, order = 'asc') {
 
 export default class Wrapper extends Component {
     state = {
-        empToRender : employees
+        empToRender : employees,
+        order : 'asc',
+        field : "id" 
     };
 
     componentDidMount() {
@@ -37,8 +39,13 @@ export default class Wrapper extends Component {
 
     handleSortClick = event => {
         const field = event.target.innerText.toLowerCase();
-        const sortedList = this.state.empToRender.sort(compareValues(field));
-        this.setState({empToRender : sortedList});
+        const  order =  this.state.order ==='asc' ? 'desc' : 'asc';
+        const sortedList = this.state.empToRender.sort(compareValues(field, order));
+        this.setState({
+            empToRender : sortedList,
+            order : order,
+            field : field
+        });
     }
 
     handleInputChange = event => {
@@ -58,7 +65,12 @@ export default class Wrapper extends Component {
         return (
             <div className="container mt-4 mx-auto">
                 <Filter handleInputChange={this.handleInputChange}/>
-                <Table employees={this.state.empToRender} handleSort={this.handleSortClick}/>
+                <Table 
+                    employees={this.state.empToRender} 
+                    handleSort={this.handleSortClick}
+                    order={this.state.order}
+                    field={this.state.field}
+                />
             </div>
         )
     }
