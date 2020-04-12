@@ -4,6 +4,8 @@
 
    ![Employees](https://github.com/tvolpatto/employees/blob/master/screenshots/screen1.PNG)
 
+   
+   [Click here](https://tvolpatto.github.io/employees/) to access the deployed application.
 
 
 ## Useful Links 
