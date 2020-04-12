@@ -64,6 +64,7 @@ export default class Wrapper extends Component {
     render() {
         return (
             <div className="container mt-4 mx-auto">
+                <h1 className="pt-2 pb-2 text-center">Employee directory</h1>
                 <Filter handleInputChange={this.handleInputChange}/>
                 <Table 
                     employees={this.state.empToRender} 
